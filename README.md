@@ -1,7 +1,7 @@
 # Personal Portfolio Website 🚀
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://joseluuu315.github.io/Portfolio/)
-[![GitHub license](https://img.shields.io/github/license/Joseluuu315/Portfolio)](https://github.com/Joseluuu315/Portfolio/blob/main/LICENSE)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen.svg)](https://portfolio-joseluuu315s-projects.vercel.app/)
+[![GitHub license](https://img.shields.io/github/license/Joseluuu315/Portfolio)](C:\Users\Josel\OneDrive\Documents\GitHub\Portfolio\LICENSE)
 
 A modern and responsive portfolio website showcasing my work as a fullstack developer. Built with HTML5, CSS3, and JavaScript, featuring a clean design and smooth animations.
 
