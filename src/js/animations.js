@@ -8,10 +8,70 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeParticles();
         initializeScrolling();
         initializeAOS();
+        initializeMobileMenu();
         themeInitialized = true;
         console.log('Components initialized');
     }
 });
+
+function initializeMobileMenu() {
+    const navbar = document.querySelector('.navbar');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (!navbar || !mobileMenuBtn) {
+        console.error('Mobile menu elements not found');
+        return;
+    }
+
+    function toggleMenu() {
+        navbar.classList.toggle('menu-open');
+        document.body.classList.toggle('no-scroll');
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbar.classList.contains('menu-open')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navbar.classList.contains('menu-open') &&
+            !e.target.closest('.nav-wrapper') &&
+            !e.target.closest('.mobile-menu-btn')) {
+            toggleMenu();
+        }
+    });
+
+    // Hide/show navbar on scroll
+    let lastScroll = 0;
+    const scrollThreshold = 100;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll <= 0) {
+            navbar.style.transform = 'translateY(0)';
+            return;
+        }
+
+        if (currentScroll > lastScroll && currentScroll > scrollThreshold) {
+            // Scrolling down & past threshold
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up
+            navbar.style.transform = 'translateY(0)';
+        }
+
+        lastScroll = currentScroll;
+    });
+}
 
 function initializeTheme() {
     const themeSwitch = document.getElementById('theme-switch');
