@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/animations.js"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -25,6 +26,10 @@
             </ul>
         </div>
     </nav>
+
+    <button id="theme-switch" class="theme-switch" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <div id="particles-js"></div>
     
@@ -73,29 +78,71 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2>Projects</h2>
+            <h2 data-aos="fade-up">Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up">
                     <div class="project-image">
-                        <img src="assets/project1.jpg" alt="Project 1">
+                        <img src="https://via.placeholder.com/1280x720" alt="Project 1">
                     </div>
                     <div class="project-info">
                         <h3>Project One</h3>
-                        <p>Description of your first project goes here.</p>
+                        <p>A modern web application built with cutting-edge technologies. Features responsive design, real-time updates, and seamless user experience.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
                         <div class="project-links">
-                            <a href="#" class="button">Live Demo</a>
-                            <a href="#" class="button">GitHub</a>
+                            <a href="#" class="button"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="button"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
-                <!-- Add more project cards as needed -->
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/1280x720" alt="Project 2">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Two</h3>
+                        <p>An innovative solution that combines powerful backend services with an elegant frontend interface. Optimized for performance and scalability.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="button"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="button"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/1280x720" alt="Project 3">
+                    </div>
+                    <div class="project-info">
+                        <h3>Project Three</h3>
+                        <p>A full-stack application that demonstrates modern development practices. Includes authentication, real-time data, and cloud integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="button"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="button"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get in Touch</h2>
+            <h2 data-aos="fade-up">Get in Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
