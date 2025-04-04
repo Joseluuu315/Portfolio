@@ -9,6 +9,8 @@
     --card-bg: #ffffff;
     --nav-bg: rgba(255, 255, 255, 0.95);
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --transition: all 0.3s ease;
 }
 
 [data-theme='dark'] {
@@ -21,15 +23,6 @@
     --nav-bg: rgba(17, 24, 39, 0.95);
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
 }
-
-/* Global Styles */
-    --primary-color: #2563eb;
-    --secondary-color: #1e40af;
-    --text-color: #1f2937;
-    --bg-color: #ffffff;
-    --section-bg: #f3f4f6;
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    --transition: all 0.3s ease;
 }
 
 * {
