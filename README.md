@@ -5,7 +5,7 @@
 
 A modern and responsive portfolio website showcasing my work as a fullstack developer. Built with HTML5, CSS3, and JavaScript, featuring a clean design and smooth animations.
 
-![Portfolio Preview](src/assets/preview.png)
+![Portfolio Preview](https://prnt.sc/s__QVykeWGWj)
 
 ## ✨ Features
 
