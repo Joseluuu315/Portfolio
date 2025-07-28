@@ -3,26 +3,38 @@
     /* Light Theme */
     --primary-color: #2563eb;
     --secondary-color: #1e40af;
+    --accent-color: #3b82f6;
     --text-color: #1f2937;
+    --text-secondary: #6b7280;
     --bg-color: #ffffff;
     --section-bg: #f3f4f6;
     --card-bg: #ffffff;
     --nav-bg: rgba(255, 255, 255, 0.95);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-hover: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     --transition: all 0.3s ease;
+    --border-radius: 12px;
+    --border-radius-lg: 20px;
 }
 
 [data-theme='dark'] {
     --primary-color: #60a5fa;
     --secondary-color: #3b82f6;
+    --accent-color: #1d4ed8;
     --text-color: #f3f4f6;
+    --text-secondary: #9ca3af;
     --bg-color: #0f172a;
     --section-bg: #1e293b;
     --card-bg: #1f2937;
     --nav-bg: rgba(15, 23, 42, 0.95);
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
     --gradient: linear-gradient(135deg, #60a5fa, #3b82f6);
+    --gradient-hover: linear-gradient(135deg, #3b82f6, #1d4ed8);
 }
 
 /* Reset and Base Styles */
@@ -593,64 +605,98 @@ section {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
-    padding: 3rem;
-    border-radius: 2rem;
+    padding: 4rem 3rem;
+    border-radius: var(--border-radius-lg);
     background: var(--card-bg);
     backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-xl);
     border: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    opacity: 0.03;
+    z-index: -1;
 }
 
 [data-theme='dark'] .hero-content {
     background: #1f2937;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-xl);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
-    text-shadow: 0 0 15px rgba(37, 99, 235, 0.2);
-    font-weight: bold;
-    animation: fadeInUp 1s ease-out;
+.hero-badge {
+    display: inline-block;
+    background: var(--gradient);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
 }
 
-[data-theme='dark'] .hero h1 {
-    color: #f3f4f6;
-    text-shadow: 0 0 15px rgba(37, 99, 235, 0.3);
+.hero h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    line-height: 1.1;
+    animation: fadeInUp 1s ease-out;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero .tagline {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
-    opacity: 0.8;
+    color: var(--text-secondary);
+    font-weight: 500;
     animation: fadeInUp 1s ease-out 0.2s;
     animation-fill-mode: both;
 }
 
-[data-theme='dark'] .hero .tagline {
-    color: #e5e7eb;
-    opacity: 0.9;
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.4s;
+    animation-fill-mode: both;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 1rem 2.5rem;
+    padding: 1.2rem 2.8rem;
     background: var(--gradient);
     color: white;
     text-decoration: none;
-    border-radius: 2rem;
-    font-weight: 500;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
     transition: var(--transition);
     margin-top: 2rem;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
-    animation: float 3s ease-in-out infinite;
+    animation: fadeInUp 1s ease-out 0.6s, float 3s ease-in-out infinite 1s;
+    animation-fill-mode: both;
 }
 
 .cta-button::before {
@@ -667,7 +713,8 @@ section {
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    box-shadow: var(--shadow-xl);
+    background: var(--gradient-hover);
 }
 
 .cta-button:hover::before {
@@ -900,6 +947,7 @@ h2:hover::after {
 /* Skills Section with hover effects */
 .skills {
     text-align: center;
+    background: var(--section-bg);
 }
 
 .skills h2 {
@@ -908,7 +956,7 @@ h2:hover::after {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     width: 100%;
     max-width: 1000px;
@@ -918,10 +966,10 @@ h2:hover::after {
 
 .skill-card {
     background-color: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius-lg);
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -929,6 +977,7 @@ h2:hover::after {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-card::before {
@@ -945,7 +994,7 @@ h2:hover::after {
 
 .skill-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    box-shadow: var(--shadow-xl);
 }
 
 .skill-card:hover::before {
@@ -955,13 +1004,48 @@ h2:hover::after {
 .skill-card i {
     font-size: 2.5rem;
     background: var(--gradient);
-    background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     animation: float 3s ease-in-out infinite;
 }
 
+.skill-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: var(--gradient);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
 /* Projects Section with cool effects */
+.projects {
+    background: var(--bg-color);
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -971,9 +1055,9 @@ h2:hover::after {
 
 .project-card {
     background-color: var(--card-bg);
-    border-radius: 1.5rem;
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
     transition: var(--transition);
     position: relative;
     display: flex;
@@ -983,8 +1067,8 @@ h2:hover::after {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
 }
 
 .project-tech {
@@ -997,23 +1081,67 @@ h2:hover::after {
 .tech-tag {
     background: var(--gradient);
     color: white;
-    padding: 0.35rem 0.75rem;
-    border-radius: 2rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
     transition: var(--transition);
-    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
+    box-shadow: var(--shadow);
 }
 
 .tech-tag:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+    box-shadow: var(--shadow-lg);
 }
 
 .project-image {
     position: relative;
     overflow: hidden;
     aspect-ratio: 16/9;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), transparent, rgba(0,0,0,0.3));
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-status {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.live {
+    background: #10b981;
+    color: white;
+}
+
+.status-badge.development {
+    background: #f59e0b;
+    color: white;
 }
 
 .project-image::before {
@@ -1078,12 +1206,12 @@ h2:hover::after {
     margin-top: auto;
 }
 
-.button {
+.button.primary {
     padding: 0.75rem 1.5rem;
     background: var(--gradient);
     color: white;
     text-decoration: none;
-    border-radius: 0.75rem;
+    border-radius: var(--border-radius);
     font-size: 0.9rem;
     font-weight: 500;
     transition: var(--transition);
@@ -1093,14 +1221,44 @@ h2:hover::after {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    box-shadow: var(--shadow);
 }
 
-.button:hover {
+.button.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    box-shadow: var(--shadow-lg);
+    background: var(--gradient-hover);
+}
+
+.button.secondary {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.button.secondary:hover {
+    transform: translateY(-2px);
+    background: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-lg);
 }
 
 /* Contact Section with animations */
+.contact {
+    background: var(--section-bg);
+}
+
 .contact-intro {
     max-width: 600px;
     margin: 0 auto 3rem;
@@ -1118,9 +1276,9 @@ h2:hover::after {
 
 .contact-card {
     background: var(--card-bg);
-    border-radius: 20px;
+    border-radius: var(--border-radius-lg);
     padding: 3rem;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
@@ -1160,7 +1318,7 @@ h2:hover::after {
 
 .contact-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
 }
 
 .contact-icon {
@@ -1170,7 +1328,7 @@ h2:hover::after {
     align-items: center;
     justify-content: center;
     background: var(--gradient);
-    border-radius: 12px;
+    border-radius: var(--border-radius);
     flex-shrink: 0;
 }
 
@@ -1221,17 +1379,18 @@ h2:hover::after {
     gap: 0.5rem;
     background: var(--gradient);
     color: white;
-    padding: 1rem 2rem;
+    padding: 1.2rem 2.5rem;
     border-radius: 30px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+    box-shadow: var(--shadow-lg);
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: var(--shadow-xl);
+    background: var(--gradient-hover);
 }
 
 .cta-button i {
@@ -1239,6 +1398,22 @@ h2:hover::after {
 }
 
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .hero-content {
+        padding: 3rem 2rem;
+    }
+    
     .contact-card {
         padding: 2rem;
     }
@@ -1254,6 +1429,16 @@ h2:hover::after {
     .contact-intro {
         font-size: 1rem;
         padding: 0 1rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 

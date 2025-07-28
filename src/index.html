@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta title="Portfolio - Jose Luis Fuentes">
-    <meta name="description" content="Portfolio of Jose Luis Fuentes">
-    <meta name="keywords" content="portfolio, Jose Luis Fuentes, fullstack developer">
-    <meta name="author" content="Jose Luis Fuentes">
-    <title>Portfolio - Jose Luis Fuentes</title>
+    <meta title="Portfolio - José Luis Fuentes Parra">
+    <meta name="description" content="Portfolio of José Luis Fuentes Parra - Fullstack Developer">
+    <meta name="keywords" content="portfolio, José Luis Fuentes Parra, fullstack developer, web development">
+    <meta name="author" content="José Luis Fuentes Parra">
+    <title>Portfolio - José Luis Fuentes Parra</title>
     <link rel="stylesheet" type="text/css" href="styles/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -21,7 +24,7 @@
             <div class="logo">
                 <a href="#home" class="logo-link">
                     <span class="logo-text">JLFP</span>
-                    <span class="full-name">Jose Luis Fuentes</span>
+                    <span class="full-name">José Luis Fuentes Parra</span>
                 </a>
             </div>
             
@@ -49,8 +52,14 @@
     
     <section id="home" class="hero">
         <div class="hero-content" data-aos="fade-up">
-            <h1>Welcome to My Portfolio</h1>
-            <p class="tagline">Fullstack Developer & Problem Solver</p>
+            <div class="hero-badge" data-aos="fade-down" data-aos-delay="200">
+                <span>👋 Hola, soy</span>
+            </div>
+            <h1 data-aos="fade-up" data-aos-delay="400">José Luis Fuentes Parra</h1>
+            <p class="tagline" data-aos="fade-up" data-aos-delay="600">Desarrollador Fullstack & Solucionador de Problemas</p>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="800">
+                Especializado en crear experiencias web modernas y eficientes que conectan la tecnología con las necesidades reales de los usuarios.
+            </p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
     </section>
@@ -70,23 +79,23 @@
                 <div class="about-text" data-aos="fade-left">
                     <div class="about-bio">
                         <h3>Who am I?</h3>
-                        <p>Hello! I'm Jose Luis, a passionate fullstack developer with a keen eye for creating efficient and elegant solutions. I thrive on turning complex problems into simple, beautiful, and intuitive designs.</p>
+                        <p>¡Hola! Soy José Luis Fuentes Parra, un desarrollador fullstack apasionado con un ojo agudo para crear soluciones eficientes y elegantes. Me especializo en transformar problemas complejos en diseños simples, hermosos e intuitivos que realmente funcionen para los usuarios.</p>
                     </div>
                     <div class="about-details">
                         <div class="detail-item">
                             <i class="fas fa-code"></i>
-                            <h4>Development</h4>
-                            <p>I specialize in building modern web applications using cutting-edge technologies.</p>
+                            <h4>Desarrollo Web</h4>
+                            <p>Me especializo en construir aplicaciones web modernas utilizando tecnologías de vanguardia y las mejores prácticas del sector.</p>
                         </div>
                         <div class="detail-item">
                             <i class="fas fa-laptop-code"></i>
-                            <h4>Problem Solving</h4>
-                            <p>I enjoy tackling complex challenges and finding innovative solutions.</p>
+                            <h4>Resolución de Problemas</h4>
+                            <p>Disfruto enfrentando desafíos complejos y encontrando soluciones innovadoras que aporten valor real.</p>
                         </div>
                         <div class="detail-item">
                             <i class="fas fa-users"></i>
-                            <h4>Collaboration</h4>
-                            <p>I believe in the power of teamwork and effective communication.</p>
+                            <h4>Colaboración</h4>
+                            <p>Creo en el poder del trabajo en equipo y la comunicación efectiva para lograr resultados excepcionales.</p>
                         </div>
                     </div>
                 </div>
@@ -96,22 +105,40 @@
 
     <section id="skills" class="skills">
         <div class="container">
-            <h2 data-aos="fade-up">Skills</h2>
+            <h2 data-aos="fade-up">Habilidades Técnicas</h2>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-code"></i>
                     <h3>Frontend</h3>
-                    <p>HTML, CSS, JavaScript</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Vue.js</span>
+                    </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
                     <i class="fas fa-database"></i>
                     <h3>Backend</h3>
-                    <p>Python, Node.js, SQL</p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
                     <i class="fas fa-tools"></i>
-                    <h3>Tools</h3>
-                    <p>Git, VS Code, Docker</p>
+                    <h3>Herramientas</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -119,61 +146,80 @@
 
     <section id="projects" class="projects">
         <div class="container">
-            <h2 data-aos="fade-up">Projects</h2>
+            <h2 data-aos="fade-up">Proyectos Destacados</h2>
             <div class="projects-grid">
                 <div class="project-card" data-aos="fade-up">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/1280x720" alt="Project 1">
+                        <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Paqui Barroso Sevilla">
+                        <div class="project-overlay">
+                            <div class="project-status">
+                                <span class="status-badge live">En Vivo</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>A modern web application built with cutting-edge technologies. Features responsive design, real-time updates, and seamless user experience.</p>
+                        <h3>Paqui Barroso Sevilla</h3>
+                        <p>Sitio web profesional para servicios de belleza y estética. Diseño elegante y moderno con sistema de citas online, galería de trabajos y información detallada de servicios.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="button"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="button"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://paquibarrososevilla.com/" target="_blank" class="button primary"><i class="fas fa-external-link-alt"></i> Ver Sitio</a>
+                            <a href="#contact" class="button secondary"><i class="fas fa-info-circle"></i> Más Info</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/1280x720" alt="Project 2">
+                        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="La Nuya">
+                        <div class="project-overlay">
+                            <div class="project-status">
+                                <span class="status-badge live">En Vivo</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>An innovative solution that combines powerful backend services with an elegant frontend interface. Optimized for performance and scalability.</p>
+                        <h3>La Nuya</h3>
+                        <p>Plataforma web completa para negocio local con catálogo de productos, sistema de pedidos online y gestión de inventario. Optimizada para dispositivos móviles y SEO.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
                             <span class="tech-tag">Python</span>
-                            <span class="tech-tag">PostgreSQL</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="button"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="button"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://lanuya.com/" target="_blank" class="button primary"><i class="fas fa-external-link-alt"></i> Ver Sitio</a>
+                            <a href="#contact" class="button secondary"><i class="fas fa-info-circle"></i> Más Info</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="https://via.placeholder.com/1280x720" alt="Project 3">
+                        <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Portfolio Personal">
+                        <div class="project-overlay">
+                            <div class="project-status">
+                                <span class="status-badge development">En Desarrollo</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-info">
-                        <h3>Project Three</h3>
-                        <p>A full-stack application that demonstrates modern development practices. Includes authentication, real-time data, and cloud integration.</p>
+                        <h3>Portfolio Personal</h3>
+                        <p>Mi portfolio personal desarrollado con tecnologías modernas. Incluye animaciones fluidas, diseño responsivo, tema oscuro/claro y optimización de rendimiento.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Angular</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">AOS</span>
+                            <span class="tech-tag">Particles.js</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="button"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#" class="button"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://github.com/Joseluuu315/Portfolio" target="_blank" class="button primary"><i class="fab fa-github"></i> Ver Código</a>
+                            <a href="#contact" class="button secondary"><i class="fas fa-envelope"></i> Contactar</a>
                         </div>
                     </div>
                 </div>
@@ -183,10 +229,10 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2 data-aos="fade-up">Get in Touch</h2>
+            <h2 data-aos="fade-up">Hablemos</h2>
             <p class="contact-intro" data-aos="fade-up" data-aos-delay="100">
-                I'm always interested in hearing about new projects and opportunities.
-                Feel free to reach out through any of these platforms!
+                Siempre estoy interesado en escuchar sobre nuevos proyectos y oportunidades.
+                ¡No dudes en contactarme a través de cualquiera de estas plataformas!
             </p>
             
             <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
@@ -208,7 +254,7 @@
                             </div>
                             <div class="contact-details">
                                 <h3>LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/jos%C3%A9-luis-fuentes-parra-80bb96257/" target="_blank">Connect with me</a>
+                                <a href="https://www.linkedin.com/in/jos%C3%A9-luis-fuentes-parra-80bb96257/" target="_blank">Conecta conmigo</a>
                             </div>
                         </div>
 
@@ -218,16 +264,16 @@
                             </div>
                             <div class="contact-details">
                                 <h3>GitHub</h3>
-                                <a href="https://github.com/Joseluuu315" target="_blank">View my repositories</a>
+                                <a href="https://github.com/Joseluuu315" target="_blank">Ver mis repositorios</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="contact-cta">
-                        <p>Prefer email?</p>
+                        <p>¿Prefieres email?</p>
                         <a href="mailto:joselufupa2016@gmail.com" class="cta-button">
                             <i class="fas fa-paper-plane"></i>
-                            Send me a message
+                            Envíame un mensaje
                         </a>
                     </div>
                 </div>
@@ -241,7 +287,7 @@
                 <a href="#home" class="footer-logo">
                     <span class="logo-text">JLFP</span>
                 </a>
-                <p class="footer-tagline">Fullstack Developer & Problem Solver</p>
+                <p class="footer-tagline">Desarrollador Fullstack & Solucionador de Problemas</p>
             </div>
             
             <div class="footer-center">
@@ -270,8 +316,8 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Jose Luis Fuentes. All rights reserved.</p>
-            <p class="made-with">Made with <i class="fas fa-heart"></i> in Spain</p>
+            <p>&copy; 2025 José Luis Fuentes Parra. Todos los derechos reservados.</p>
+            <p class="made-with">Hecho con <i class="fas fa-heart"></i> en España</p>
         </div>
     </footer>
     <script src="js/animations.js"></script>
