@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx http-server src -p 8080"
+    "start": "npx http-server src -p 25888 -a 0.0.0.0"
   },
   "author": "",
   "license": "ISC",
