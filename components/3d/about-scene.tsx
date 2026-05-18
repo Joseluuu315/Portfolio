@@ -2,7 +2,7 @@
 
 import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Text3D, Center, MeshTransmissionMaterial } from "@react-three/drei";
+import { Float, Text, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
 function GeometricShapes() {
@@ -60,18 +60,12 @@ function GlassSphere() {
     <Float speed={2} rotationIntensity={0.3} floatIntensity={0.8}>
       <mesh ref={meshRef} scale={1.2}>
         <icosahedronGeometry args={[1, 1]} />
-        <MeshTransmissionMaterial
-          backside
-          samples={4}
-          thickness={0.5}
-          chromaticAberration={0.2}
-          anisotropy={0.3}
-          distortion={0.5}
-          distortionScale={0.5}
-          temporalDistortion={0.1}
-          metalness={0.1}
-          roughness={0}
+        <MeshDistortMaterial
           color="#22d3ee"
+          distort={0.3}
+          speed={2}
+          roughness={0.1}
+          metalness={0.8}
         />
       </mesh>
     </Float>
@@ -89,17 +83,14 @@ function AnimatedCode() {
 
   return (
     <group ref={groupRef} position={[0, -2, 0]}>
-      <Center>
-        <Text3D
-          font="/fonts/Geist_Bold.json"
-          size={0.3}
-          height={0.05}
-          curveSegments={12}
-        >
-          {"<Developer />"}
-          <meshStandardMaterial color="#22d3ee" emissive="#22d3ee" emissiveIntensity={0.2} />
-        </Text3D>
-      </Center>
+      <Text
+        fontSize={0.4}
+        color="#22d3ee"
+        anchorX="center"
+        anchorY="middle"
+      >
+        {"<Developer />"}
+      </Text>
     </group>
   );
 }
